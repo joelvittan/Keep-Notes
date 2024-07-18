@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="inventory.css">
+    <script src="inventory.js"></script>
+    <script src="https://kit.fontawesome.com/bfa9489426.js" crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Keep Notes</title>
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+</head>
+<body>
+    <div class="bg-cont" id="bgCont"> 
+        <div class="menu">
+            <div class="menuhed" >
+                <h1 class="menu-hed">Keep Notes</h1>
+            </div>
+            <div class="menu-item" id="menu1">
+                <i class="fa-regular fa-note-sticky"></i>
+                <a class="link " href="#" id="link1">Create new note</a>
+            </div>
+            <div class="menu-item" id="menu2">
+                <i class="fa-solid fa-box-archive"></i>
+                <a class="link" href="#" >Archived notes</a>
+            </div>
+            <div class="menu-item" id="menu3">
+                <i class="fa-solid fa-delete-left" ></i>
+                <a class="link" href="#" >Deleted Notes</a>
+            </div>
+            <div class="profile">
+                <img src="img/Avatar.png" id="img" style="width:auto;">
+                <a href="/logout" style="text-decoration: none; color: inherit;"><i class="fa-solid fa-right-from-bracket"></i></a>
+                
+            </div>
+
+        </div>
+        <div id="contentCont" class="contentCont">
+            <div class="content content1" id="newNoteCont">
+                <div class="contenthed">
+                    <div class="greeting">
+                        <h1 class="greet-hed">Hi,<%= message %></h1>
+                        <p class="greet-comment">Capture and Manage Your Thoughts"</p>
+                    </div>
+                    
+                </div>
+                <div class="new-task-cont">
+                    <div class="search-cont">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" class="search-input" placeholder="Search" aria-label="Search" id="pendingTaskSearch" >
+                    </div>
+                    <div class="create-task-butt-cont ">
+                            <button type="button" class="create-task-butt" id="createTaskButt">+ Create Note</button>
+                    </div>
+                </div>        
+    
+    
+                <div class="metric-items-cont" id="noteCont">
+                    <div class="metric-item" id="item1">
+                        <h1 class="metric-item-hed" id="noteHed">Note Head</h1>
+                        <p id="notePara">Note Para </p>
+                        <span id="tags" class="tag">#life #jdiejfdfei</span>
+                        <div id="noteFunctions" class="noteFunctions">
+                            <i class="fa-solid fa-pen" id="edit"></i>
+                            <i class="fa-solid fa-box-archive" id="archive"></i>
+                            <i class="fa-solid fa-trash" id="deleteico"></i>
+                        </div>
+                        
+                    </div>
+                    
+                </div> 
+            </div>
+            <div class="content content2" id="archivedCont">
+                <h1>arch</h1>
+            </div>
+            <div class="content content3" id="deleteCont">
+                <h1>dele</h1>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+
+
+    <div class="popup-form" id="popUpForm1">
+        <form id="form1">
+            <h1 class="greet-hed" style="text-align:left; margin-left:10px;margin-bottom:10px;">Create New Note</h1>
+            <div class="row1">
+                <div class="mb-3 form-1-1">
+                    <label for="taskName" class="form-label form-hed">Note Title</label>
+                    <input type="text" class="form-control" id="noteTitle" placeholder="Enter Note Title" required>
+                </div>
+            </div>
+            
+            <div class="row1">
+                <div class="mb-3 form-1-1">
+                    <label  class="form-label form-hed">Note</label>
+                    <textarea type="text" class="form-control" id="note" placeholder="Enter Your thought here"required></textarea>
+                </div>
+            </div>
+            <div class="row1">
+                <div class="mb-3 form-1-1">
+                    <label  class="form-label form-hed">#Tags(seperated by comma)</label>
+                    <input type="text" class="form-control" id="tagInput" placeholder="Enter Tags here" required>
+                </div>
+            </div>
+            <div class="row1">
+                <div class="mb-3 form-1-1">
+                    <label class="form-label form-hed">Background Color</label>
+                    <select class="form-select " id="colorName" aria-label="Default select example" >
+                        <option selected>Select Color Here</option>
+                        <option value="White">White</option>
+                        <option value="Green">Green</option>
+                        <option value="Red">Red</option>
+                    </select>
+                </div>
+            </div>
+            <div class="butt-cont">
+                <button  class="btn btn-outline-secondary" id="cancelButt">Cancel</button>
+                <button id="newTaskSubmit"  class="btn btn-success" style="background-color:#60C537; border: none; " >Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
