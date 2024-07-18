@@ -23,7 +23,6 @@
 /*menu*/
 .menu{
     background-color: #F0FBEC;
-    max-height:200vh;
     min-width:20%;
     display: flex;
     flex-direction: column;
